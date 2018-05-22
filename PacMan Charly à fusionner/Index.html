@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PAC-MAN Le Jeu</title>
+<style>
+body{
+background:radial-gradient(circle,grey,black);
+}
+
+#logo{
+text-align:center;
+}
+
+#Easy{
+width:272px;
+border:1px solid black;
+background-color:yellow;
+font-family:Comic Sans MS, cursive;
+-moz-border-bottom-right-radius: 5px;
+border-bottom-right-radius: 30px;
+-moz-border-bottom-left-radius: 5px;
+border-bottom-left-radius: 30px;
+transition:all 0.3s ease-out;
+float:left;
+}
+
+#Easy:hover,
+#Easy:focus{
+transform:scale(1.05);
+box-shadow: 0 0 15px black;
+cursor:pointer;
+}
+
+#Hard{
+width:272px;
+border:1px solid black;
+background-color:yellow;
+font-family:Comic Sans MS, cursive;
+-moz-border-bottom-right-radius: 5px;
+border-bottom-right-radius: 30px;
+-moz-border-bottom-left-radius: 5px;
+border-bottom-left-radius: 30px;
+transition:all 0.3s ease-out;
+float:left;
+margin-left:5%;
+}
+
+#Hard:hover,
+#Hard:focus{
+transform:scale(1.05);
+box-shadow: 0 0 15px black;
+cursor:pointer;
+}
+
+#Custom{
+width:272px;
+border:1px solid black;
+background-color:yellow;
+font-family:Comic Sans MS, cursive;
+-moz-border-bottom-right-radius: 5px;
+border-bottom-right-radius: 30px;
+-moz-border-bottom-left-radius: 5px;
+border-bottom-left-radius: 30px;
+transition:all 0.3s ease-out;
+float:left;
+margin-left:5%;
+}
+
+#Custom:hover,
+#Custom:focus{
+transform:scale(1.05);
+box-shadow: 0 0 15px black;
+cursor:pointer;
+}
+
+#Conteneur{
+width:925px;
+margin-left:auto;
+margin-right:auto;
+margin-top:40px;
+}
+
+#Rules{
+width:600px;
+margin-top:390px;
+margin-left:auto;
+margin-right:auto;
+border:1px solid black;
+background:radial-gradient(circle,cyan,blue);
+font-family:Comic Sans MS, cursive;
+-moz-border-bottom-right-radius: 5px;
+border-bottom-right-radius: 30px;
+-moz-border-bottom-left-radius: 5px;
+border-bottom-left-radius: 30px;
+-moz-border-top-right-radius: 5px;
+border-top-right-radius: 30px;
+-moz-border-top-left-radius: 5px;
+border-top-left-radius: 30px;
+transition:all 0.3s ease-out;
+text-align:center;
+}
+
+#Rules:hover,
+#Rules:focus{
+transform:scale(1.05);
+box-shadow: 0 0  15px black;
+cursor:pointer;
+}
+
+a{
+color:black;
+}
+</style>
+</head>
+<body>
+<div id="logo">
+<img src="pacmanlogo.png"></img>
+</div>
+
+<div id="Conteneur">
+
+	<a href="Easy.html">
+	<div id="Easy">
+	<img src="imageEasy.png"></img>
+	<p>
+	<center>
+	Le niveau classique de pacman: simple aux premiers abords mais diabolique au fil du temps! 
+	</center>
+	</p>
+	</div>
+	</a>
+
+	<a href="Hard.html">
+	<div id="Hard">
+	<img src="imageEasy.png"></img>
+	<p>
+	<center>
+	Un niveau avec un labyrinthe beaucoup plus grand pour plus de challenge!
+	<center>
+	</p>
+	</div>
+	</a>
+
+
+	<a href="Custom.html">
+	<div id="Custom">
+	<img src="imageEasy.png"></img>
+	<p>
+	<center>
+	Un editeur de niveau pour vous permettre d'exprimer votre creativité!
+	</center>
+	</p>
+	</div>
+	</a>
+</div>
+
+<a href="Rules.html">
+<div id="Rules">
+Consultez les règles du jeu pour le maîtriser comme jamais!
+</div>
+</a>
+
+</body>

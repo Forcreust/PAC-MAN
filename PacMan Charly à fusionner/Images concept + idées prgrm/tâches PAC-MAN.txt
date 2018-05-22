@@ -1,0 +1,178 @@
+
+												PAC-MAN
+
+
+
+
+IA (fantôme) + interactions avec le joueur
+Déplacement joueur + Design du niveau
+
+
+
+Charly:
+
+Déplacement joueur + Design du niveau
+
+
+
+
+Alexis:
+
+IA (fantôme) + interactions avec le joueur
+
+
+
+Allan:
+Interface de la page (bouton reset, montrer les commandes) + score (tableau de score, enregistrement du nom du joueur)
+
+
+
+----------------------------
+
+									Déplacement joueur:
+
+
+Si (j'appuie sur flèche haut) & si (!mur en haut)
+Alors Tant que il n'y a pas de mur en haut
+Alors Joueur avance vers le haut
+fin Tant que
+fin Si
+
+
+Si (j'appuie sur flèche gauche) & si (!mur à gauche)
+Alors Tant que il n'y a pas de mur à gauche
+Alors Joueur avance vers la gauche
+fin Tant que
+fin Si
+
+
+Si (j'appuie sur flèche droite) & si (!mur à droite)
+Alors Tant que il n'y a pas de mur à droite
+Alors Joueur avance vers la droite
+fin Tant que
+fin Si
+
+
+Si (j'appuie sur flèche bas) & si (!mur en bas)
+Alors Tant que il n'y a pas de mur en bas
+Alors Joueur avance vers le bas
+fin Tant que
+fin Si
+
+
+									Design du niveau:
+
+
+
+var l=16;
+var h=16;
+
+
+	dessinerBlock(x,y)
+
+context.fillStyle = 'blUE';
+context.beginPath();
+//Premier point
+context.moveTo(x-l,y+h); //bas gauche
+//Trace les côtés
+context.lineTo(x+l, y+h); //bas droite
+context.lineTo(x+l, y-h); //haut droit
+context.lineTo(x-l, y-h); //haut gauche
+//Pour terminer la construction et la remplir
+context.closePath();
+context.fill();
+
+	
+	dessinerPacGomme(x2,y2)
+
+context.beginPath();
+context.fillStyle='yellow';
+context.lineWidth="1";
+context.arc(x2, y2, 90, 0, 2 * Math.PI);
+context.closePath();
+context.stroke();
+context.fill();
+
+									Canvas
+
+		
+Code JS:
+
+
+		//à chaque reload
+		window.addEventListener('load', function () {
+		  // On récupère l'objet canvas
+		  var elem = document.getElementById('canvasElem');
+		  if (!elem || !elem.getContext) {
+			return;
+		  }
+		  // On récupère le contexte 2D
+		  context = elem.getContext('2d');
+		  if (!context) {
+			return;
+		  } 
+		  // Boucle de rafraichissement du contexte 2D
+		  boucleJeu = setInterval(refreshGame, intervalTemps); //refresh tous les x ms
+		}, false);
+	
+	//variables internes
+var boucleJeu; //appelée pour refresh
+var intervalTemps = 2; //temps entre 2 refresh en ms
+var context; //le contexte 2d
+ 
+// Constantes du jeu
+var largeur_fenetre = 600; //taille du canvas
+var hauteur_fenetre = 600; //hauteur du canvas
+var avancer = 1; //on commence a gauche, en allant vers la droite
+
+
+Code HTML:
+
+<div id='conteneur'>
+	<canvas id="canvasElem" width="600" height="600">
+		Canvas failed
+	</canvas>	
+</div>
+
+
+
+									Fonction d'actualisation
+
+
+function refreshGame() {
+context.clearRect(0,0,largeur_fenetre,hauteur_fenetre);
+
+
+/*
+Les fonctions du jeu....
+*/
+
+}
+
+
+									Animation du PACMAN
+
+VARIABLES
+variable angleBouche1=1.75;
+variable angleBouche2=0.25;
+variable booléenne ferme=vrai;
+
+
+fonction Anime()
+
+Si angleBouche1 < 2 et ferme=vrai
+Alors
+angleBouche1=angleBouche1+0.1;
+angleBouche2=angleBouche2-0.1;
+fin Si
+
+Sinon Si angleBouche1 vaut 2
+Alors
+ferme=faux
+fin Si
+
+Si angleBouche1>1.75 et ferme=faux
+Alors
+angleBouche1=angleBouche1-0.1;
+angleBouche2=angleBouche2+0.1;
+

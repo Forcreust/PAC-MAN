@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PAC-MAN</title>
+<script language="Javascript" src="Create.js"></script>
+<style>
+body{
+    background-color:#000000;
+	color:#FFFFFF;
+}
+html {
+ transform:scale(0.9);
+}
+#warning{
+color:red;
+}
+</style>
+</head>
+
+
+<body>
+<center>
+	<canvas id="canvasElem" width="993" height="993" onmousemove="poser(event)"; onClick="dessiner(event);">
+		Canvas failed
+	</canvas>	
+</center>
+<hr/>
+<center>
+<div id="cordo">
+Coordonnées de la souris : <input type="text" id="coordo" value="coordonnées inconnues" readonly="readonly" />
+</div>
+<form name="choixOutils">
+<input type="radio" Name="Creer" Value="0">Bloc</input>
+<input type="radio" Name="Creer" Value="1">Porte (fantômes)</input>
+<input type="radio" Name="Creer" Value="2">Effacer</input>
+<input type="radio" Name="Creer" Value="3">Pac-gomme</input>
+<input type="radio" Name="Creer" Value="4">Super pac-gomme</input>
+<input type="radio" Name="Creer" Value="5">Générateur de fruits</input>
+<input type="radio" Name="Creer" Value="6">Téléporteurs</input>
+<input type="radio" Name="Creer" Value="7">Fantômes</input>
+<input id="bouton_click" type="button" Name="Init" Value="Réinitialiser le niveau" onClick="Reinit()"></input>
+</form>
+</center>
+<center>
+Outil actuel
+</center>
+<center>
+<img id="image" src="outil0.png"></img>
+</center>
+<center>
+<input id="generate" type="button" Name="Generer" Value="Générer le niveau" onClick="Generate()"></input><input type="text" id="textgen" value="" readonly="readonly" />
+</center>
+<div id="warning">
+<h1>Attention, pour que l'éditeur fonctionne correctement, vous devez mettre la fenêtre en grand, et rester tout en haut de la page!</h1>
+</div>
+</body>
+
+</html>

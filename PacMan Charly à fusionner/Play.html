@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PAC-MAN</title>
+<script language="Javascript" src="Play.js"></script>
+<style>
+body{
+    background-color:#000000;
+}
+html {
+ transform:scale(0.9);
+}
+</style>
+</head>
+
+
+<body>
+<audio id="musique" src="Musique.mp3" autoplay loop="true"></audio>
+<div id='conteneur'>
+<center>
+	<canvas id="canvasElem" width="1600" height="900">
+		Canvas failed
+	</canvas>	
+</center>
+</div>
+<center>
+<input id="generate" type="text" Name="ZoneGenerer" Value=""/>
+<input type="button" id="textgen" value="Valider la génération" onClick="generate();" />
+</center>
+</body>
+</html>
